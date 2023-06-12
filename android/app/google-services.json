@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "22739596663",
+    "project_id": "uas-stationery-app",
+    "storage_bucket": "uas-stationery-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22739596663:android:b8f1ff2ad63b82fb311d72",
+        "android_client_info": {
+          "package_name": "com.example.uas_stationery_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22739596663-f3o5v3eh53rbb595sfj5s32op49q0m35.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnwEDu-UxOEcfPnGJ9597Ezdh9vDjVKzo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22739596663-f3o5v3eh53rbb595sfj5s32op49q0m35.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
