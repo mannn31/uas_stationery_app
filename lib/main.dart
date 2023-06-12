@@ -6,7 +6,14 @@ import 'package:uas_stationery_app/pages/home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: 'AIzaSyBnwEDu-UxOEcfPnGJ9597Ezdh9vDjVKzo',
+      appId: '1:22739596663:android:b8f1ff2ad63b82fb311d72',
+      messagingSenderId: '22739596663',
+      projectId: 'uas-stationery-app',
+    ),
+  );
   runApp(const MyApp());
 }
 
