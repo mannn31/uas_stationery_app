@@ -3,6 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:uas_stationery_app/pages/auth.dart';
 import 'package:uas_stationery_app/pages/home.dart';
+import 'package:uas_stationery_app/pages/profile.dart';
+import 'package:uas_stationery_app/pages/splash.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,12 +36,16 @@ class MyApp extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return const HomePage();
+            return const SplashPage();
           } else {
             return const AuthPage();
           }
         },
       ),
+      routes: {
+        '/home': (context) => HomePage(),
+        '/profile': (context) => ProfilePage(),
+      },
     );
   }
 }
