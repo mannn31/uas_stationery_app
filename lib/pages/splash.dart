@@ -1,9 +1,8 @@
-import 'dart:html';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:uas_stationery_app/pages/cart.dart';
 import 'package:uas_stationery_app/pages/home.dart';
 import 'package:uas_stationery_app/pages/product.dart';
 import 'package:uas_stationery_app/pages/profile.dart';
@@ -21,9 +20,8 @@ class _SplashPageState extends State<SplashPage> {
 
   List<Widget> _pages = [
     HomePage(),
-    ProductStationery(),
-    ProductPaper(),
-    ProductBook(),
+    ProductPage(),
+    CartPage(),
     ProfilePage(),
   ];
 
@@ -66,20 +64,14 @@ class _SplashPageState extends State<SplashPage> {
                 inactiveColor: Color.fromRGBO(117, 106, 98, 1),
                 textAlign: TextAlign.center),
             BottomNavyBarItem(
-                icon: Icon(Icons.edit),
-                title: Text('Stationery'),
+                icon: Icon(Icons.inventory),
+                title: Text('Product'),
                 activeColor: Color.fromRGBO(121, 85, 72, 1.0),
                 inactiveColor: Color.fromRGBO(117, 106, 98, 1),
                 textAlign: TextAlign.center),
             BottomNavyBarItem(
-                icon: Icon(Icons.insert_drive_file),
-                title: Text('Paper'),
-                activeColor: Color.fromRGBO(121, 85, 72, 1.0),
-                inactiveColor: Color.fromRGBO(117, 106, 98, 1),
-                textAlign: TextAlign.center),
-            BottomNavyBarItem(
-                icon: Icon(Icons.book),
-                title: Text('Book'),
+                icon: Icon(Icons.shopping_cart),
+                title: Text('Cart'),
                 activeColor: Color.fromRGBO(121, 85, 72, 1.0),
                 inactiveColor: Color.fromRGBO(117, 106, 98, 1),
                 textAlign: TextAlign.center),
@@ -140,63 +132,13 @@ class _SplashPageState extends State<SplashPage> {
                   _onItemTapped(0);
                 },
               ),
-              ExpansionTile(
-                leading: Icon(Icons.inventory),
-                title: Text(
-                  'Product',
-                  style: TextStyle(
-                    color: Color.fromRGBO(117, 106, 98, 1),
-                  ),
-                ),
-                children: [
-                  ListTile(
-                    title: Text(
-                      'Stationery',
-                      style: TextStyle(
-                        color: _selectedIndex == 1
-                            ? Color.fromRGBO(121, 85, 72, 1.0)
-                            : Color.fromRGBO(117, 106, 98, 1),
-                      ),
-                    ),
-                    onTap: () {
-                      _onItemTapped(1);
-                    },
-                  ),
-                  ListTile(
-                    title: Text(
-                      'Paper',
-                      style: TextStyle(
-                        color: _selectedIndex == 2
-                            ? Color.fromRGBO(121, 85, 72, 1.0)
-                            : Color.fromRGBO(117, 106, 98, 1),
-                      ),
-                    ),
-                    onTap: () {
-                      _onItemTapped(2);
-                    },
-                  ),
-                  ListTile(
-                    title: Text(
-                      'Book',
-                      style: TextStyle(
-                        color: _selectedIndex == 3
-                            ? Color.fromRGBO(121, 85, 72, 1.0)
-                            : Color.fromRGBO(117, 106, 98, 1),
-                      ),
-                    ),
-                    onTap: () {
-                      _onItemTapped(3);
-                    },
-                  ),
-                ],
-              ),
               ListTile(
-                leading: Icon(Icons.person,
-                    color: _selectedIndex == 4
+                leading: Icon(Icons.inventory,
+                    color: _selectedIndex == 1
                         ? Color.fromRGBO(121, 85, 72, 1.0)
                         : Color.fromRGBO(117, 106, 98, 1)),
                 title: Text(
-                  'Profile',
+                  'Product',
                   style: TextStyle(
                     color: _selectedIndex == 1
                         ? Color.fromRGBO(121, 85, 72, 1.0)
@@ -204,7 +146,41 @@ class _SplashPageState extends State<SplashPage> {
                   ),
                 ),
                 onTap: () {
-                  _onItemTapped(4);
+                  _onItemTapped(1);
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.shopping_cart,
+                    color: _selectedIndex == 2
+                        ? Color.fromRGBO(121, 85, 72, 1.0)
+                        : Color.fromRGBO(117, 106, 98, 1)),
+                title: Text(
+                  'Cart',
+                  style: TextStyle(
+                    color: _selectedIndex == 2
+                        ? Color.fromRGBO(121, 85, 72, 1.0)
+                        : Color.fromRGBO(117, 106, 98, 1),
+                  ),
+                ),
+                onTap: () {
+                  _onItemTapped(2);
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.person,
+                    color: _selectedIndex == 3
+                        ? Color.fromRGBO(121, 85, 72, 1.0)
+                        : Color.fromRGBO(117, 106, 98, 1)),
+                title: Text(
+                  'Profile',
+                  style: TextStyle(
+                    color: _selectedIndex == 3
+                        ? Color.fromRGBO(121, 85, 72, 1.0)
+                        : Color.fromRGBO(117, 106, 98, 1),
+                  ),
+                ),
+                onTap: () {
+                  _onItemTapped(3);
                 },
               ),
             ],

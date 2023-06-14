@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:uas_stationery_app/pages/auth.dart';
 import 'package:uas_stationery_app/pages/home.dart';
 import 'package:uas_stationery_app/pages/profile.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Stationery Shop',
       theme: ThemeData(
           // This is the theme of your application.
