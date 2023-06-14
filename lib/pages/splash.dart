@@ -142,7 +142,12 @@ class _SplashPageState extends State<SplashPage> {
               ),
               ExpansionTile(
                 leading: Icon(Icons.inventory),
-                title: Text('Product'),
+                title: Text(
+                  'Product',
+                  style: TextStyle(
+                    color: Color.fromRGBO(117, 106, 98, 1),
+                  ),
+                ),
                 children: [
                   ListTile(
                     title: Text(
