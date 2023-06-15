@@ -7,6 +7,11 @@
         android:label="uas_stationery_app"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDuAHH3YxtWg8FbrSKhwjOMEyAT1YlbaYo"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -33,10 +38,5 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
-
-        <meta-data
-        android:name="com.google.android.geo.API_KEY"
-        android:value="AIzaSyDuAHH3YxtWg8FbrSKhwjOMEyAT1YlbaYo"
-        />
     </application>
 </manifest>
