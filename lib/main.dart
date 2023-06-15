@@ -6,6 +6,7 @@ import 'package:uas_stationery_app/pages/auth.dart';
 import 'package:uas_stationery_app/pages/home.dart';
 import 'package:uas_stationery_app/pages/profile.dart';
 import 'package:uas_stationery_app/pages/splash.dart';
+import 'package:uas_stationery_app/widgets/maps.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/home': (context) => HomePage(),
+        '/maps': (context) => MapsWidget(),
         '/profile': (context) => ProfilePage(),
       },
     );

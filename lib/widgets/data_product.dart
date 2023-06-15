@@ -54,7 +54,7 @@ class DataProductCard extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: Text('${productController.products[index].price}'),
+            child: Text('\Rp. ${productController.products[index].price}.000'),
           ),
           IconButton(
             onPressed: () {
